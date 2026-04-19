@@ -37,7 +37,12 @@ def _github_mcp(token: str) -> dict:
             "type": "http",
             "url": "https://api.githubcopilot.com/mcp/",
             "headers": {"Authorization": f"Bearer {token}"},
-            "tools": ["*"],
+            "tools": [
+                "get_file_contents",  # list directory contents and read .md files
+                "create_branch",  # create a uniquely named branch before writing
+                "create_or_update_file",  # write SOP and CONTEXT.md files to the branch
+                "create_pull_request",  # open a PR for review once files are written
+            ],
         }
     }
 
