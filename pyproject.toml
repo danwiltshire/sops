@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "sops"
-version = "0.1.0"
+version = "1.0.0"
 description = "CLI-driven SOP generator powered by GitHub Copilot SDK"
 readme = "README.md"
 requires-python = ">=3.11"
