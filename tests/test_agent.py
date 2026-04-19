@@ -50,7 +50,12 @@ def test_github_mcp_structure():
     assert mcp["github"]["type"] == "http"
     assert mcp["github"]["url"] == "https://api.githubcopilot.com/mcp/"
     assert mcp["github"]["headers"]["Authorization"] == "Bearer my-token"
-    assert mcp["github"]["tools"] == ["*"]
+    assert mcp["github"]["tools"] == [
+        "get_file_contents",
+        "create_branch",
+        "create_or_update_file",
+        "create_pull_request",
+    ]
 
 
 def test_load_prompt_returns_file_contents():
